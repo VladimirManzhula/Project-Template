@@ -2,9 +2,9 @@
 {
     public partial class WindowNames
     {
-        public enum Splash
+        public enum ESplash
         {
-           SplashScreen, 
+           Splash, 
         }
     }
 }

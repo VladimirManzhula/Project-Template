@@ -6,7 +6,7 @@ namespace Ui.Splash.Windows
 {
     public class SplashWindow : WindowBase
     {
-        public override string Name => nameof(WindowNames.Splash.SplashScreen);
+        public override string Name => nameof(WindowNames.ESplash.Splash);
         
         protected override void AddControllers()
         {

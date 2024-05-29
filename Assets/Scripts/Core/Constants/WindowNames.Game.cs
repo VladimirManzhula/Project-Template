@@ -2,9 +2,9 @@
 {
     public partial class WindowNames
     {
-        public enum Game
+        public enum EGame
         {
-            menu,
+            Menu,
         }
     }
 }
