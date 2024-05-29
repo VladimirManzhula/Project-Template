@@ -4,13 +4,13 @@ using Ui.Splash.SplashScreen;
 
 namespace Ui.Splash.Windows
 {
-    public class SplashScreenWindow : WindowBase
+    public class SplashWindow : WindowBase
     {
         public override string Name => nameof(WindowNames.Splash.SplashScreen);
         
         protected override void AddControllers()
         {
-            AddController<SplashScreenController>();
+            AddController<SplashController>();
         }
     }
 }

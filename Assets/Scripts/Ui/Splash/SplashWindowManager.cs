@@ -17,7 +17,7 @@ namespace Ui.Splash
 
         public void Initialize()
         {
-            _signalBus.OpenWindow<SplashScreenWindow>();
+            _signalBus.OpenWindow<SplashWindow>();
         }
     }
 }

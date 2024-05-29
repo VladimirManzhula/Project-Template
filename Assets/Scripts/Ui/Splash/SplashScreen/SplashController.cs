@@ -6,12 +6,12 @@ using Zenject;
 
 namespace Ui.Splash.SplashScreen
 {
-    public class SplashScreenController : UiController<SplashScreenView>, IInitializable, IDisposable
+    public class SplashController : UiController<SplashView>, IInitializable, IDisposable
     {
         private readonly ISceneService _sceneService;
         private IDisposable _timerDisposable = Disposable.Empty;
 
-        public SplashScreenController(
+        public SplashController(
             ISceneService sceneService
         )
         {

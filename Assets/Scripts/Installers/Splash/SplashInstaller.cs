@@ -19,7 +19,7 @@ namespace Installers.Splash
 
         private void BindWindows()
         {
-            Container.BindInterfacesAndSelfTo<SplashScreenWindow>().AsSingle();
+            Container.BindInterfacesAndSelfTo<SplashWindow>().AsSingle();
         }
     }
 }
