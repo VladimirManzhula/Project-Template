@@ -1,19 +1,15 @@
 ﻿using SimpleUi;
 using Ui.Splash.SplashScreen;
 using UnityEngine;
-using UnityEngine.Serialization;
 using Zenject;
 
 namespace Installers.Splash
 {
-    [CreateAssetMenu(menuName = "Installers/SplashPrefabInstaller", fileName = "SplashPrefabInstaller")]
-    public class SplashUiInstaller : ScriptableObjectInstaller
+    [CreateAssetMenu(menuName = "Installers/SplashUiPrefabsInstaller", fileName = "SplashUiPrefabsInstaller")]
+    public class SplashUiPrefabsInstaller : ScriptableObjectInstaller
     {
-        [Header("Canvas")]
         [SerializeField] private Canvas canvas;
-
-        [FormerlySerializedAs("splashScreenView")] [Space] [Header("Views")] [SerializeField]
-        private SplashView splashView;
+        [SerializeField] private SplashView splashView;
 
         public override void InstallBindings()
         {

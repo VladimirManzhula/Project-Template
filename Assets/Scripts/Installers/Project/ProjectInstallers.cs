@@ -1,4 +1,5 @@
 ﻿using Core.Services.Scenes.Impls;
+using Project.Windows;
 using UnityEngine;
 using Zenject;
 
@@ -10,6 +11,7 @@ namespace Installers.Project
         {
             SetSettings();
             BindServices();
+            BindWindows();
         }
 
         private void SetSettings()
@@ -21,6 +23,11 @@ namespace Installers.Project
         private void BindServices()
         {
             Container.BindInterfacesTo<SceneService>().AsSingle();
+        }
+
+        private void BindWindows()
+        {
+            Container.BindInterfacesAndSelfTo<LoadingWindow>().AsSingle();
         }
     }
 }

@@ -1,6 +1,6 @@
 ﻿using SimpleUi.Abstracts;
 
-namespace Ui.Game.Hud
+namespace Ui.Game.Menu
 {
     public class MenuView : UiView
     {

@@ -1,17 +1,15 @@
 ﻿using SimpleUi;
-using Ui.Game.Hud;
+using Ui.Game.Menu;
 using UnityEngine;
-using UnityEngine.Serialization;
 using Zenject;
 
 namespace Installers.Game
 {
-    [CreateAssetMenu(menuName = "Installers/GameUiInstaller", fileName = "GameUiInstaller")]
-    public class GameUiInstaller : ScriptableObjectInstaller
+    [CreateAssetMenu(menuName = "Installers/GameUiPrefabsInstaller", fileName = "GameUiPrefabsInstaller")]
+    public class GameUiPrefabsInstaller : ScriptableObjectInstaller
     {
         [SerializeField] private Canvas canvas;
-        [FormerlySerializedAs("hudView")] [SerializeField] private MenuView menuView;
-        
+        [SerializeField] private MenuView menuView;
 
         public override void InstallBindings()
         {

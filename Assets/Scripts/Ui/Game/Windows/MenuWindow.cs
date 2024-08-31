@@ -1,6 +1,6 @@
 ﻿using Core.Constants;
 using SimpleUi;
-using Ui.Game.Hud;
+using Ui.Game.Menu;
 
 namespace Ui.Game.Windows
 {
