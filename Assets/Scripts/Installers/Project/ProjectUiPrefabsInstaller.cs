@@ -5,7 +5,10 @@ using Zenject;
 
 namespace Installers.Project
 {
-    [CreateAssetMenu(menuName = "Installers/ProjectUiPrefabsInstaller", fileName = "ProjectUiPrefabsInstaller")]
+    [CreateAssetMenu(
+        menuName = "Installers/Project/ProjectUiPrefabsInstaller", 
+        fileName = nameof(ProjectUiPrefabsInstaller), order = 0
+    )]
     public class ProjectUiPrefabsInstaller : ScriptableObjectInstaller
     {
         [SerializeField] private Canvas canvas;

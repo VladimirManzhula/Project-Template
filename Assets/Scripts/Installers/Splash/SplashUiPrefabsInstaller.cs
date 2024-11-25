@@ -5,7 +5,10 @@ using Zenject;
 
 namespace Installers.Splash
 {
-    [CreateAssetMenu(menuName = "Installers/SplashUiPrefabsInstaller", fileName = "SplashUiPrefabsInstaller")]
+    [CreateAssetMenu(
+        menuName = "Installers/Splash/SplashUiPrefabsInstaller", 
+        fileName = nameof(SplashUiPrefabsInstaller), order = 0
+    )]
     public class SplashUiPrefabsInstaller : ScriptableObjectInstaller
     {
         [SerializeField] private Canvas canvas;
