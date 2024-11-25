@@ -1,5 +1,5 @@
 ﻿using Core.Services.Scenes.Impls;
-using Project.Windows;
+using Ui.Project.Windows;
 using UnityEngine;
 using Zenject;
 

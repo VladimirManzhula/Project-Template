@@ -2,10 +2,9 @@
 {
     public partial class WindowNames
     {
-        public enum EProjectType
+        public enum EMenuType
         {
-           Splash,
-           Loading
+            Menu,
         }
     }
 }

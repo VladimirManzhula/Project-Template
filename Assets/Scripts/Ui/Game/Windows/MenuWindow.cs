@@ -6,7 +6,7 @@ namespace Ui.Game.Windows
 {
     public class MenuWindow : WindowBase
     {
-        public override string Name => nameof(WindowNames.EGame.Menu);
+        public override string Name => nameof(WindowNames.EMenuType.Menu);
         
         protected override void AddControllers()
         {
