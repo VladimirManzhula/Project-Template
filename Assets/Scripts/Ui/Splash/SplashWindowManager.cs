@@ -1,23 +1,23 @@
-﻿using SimpleUi.Signals;
+﻿using Reflex.Interfaces;
 using Ui.Splash.Windows;
-using Zenject;
+using Ui.Window;
 
 namespace Ui.Splash
 {
-    public class SplashWindowManager : IInitializable
+    public class SplashWindowManager : IInitializable, INonLazy
     {
-        private readonly SignalBus _signalBus;
+        private readonly ISimpleWindowController _windowController;
 
         public SplashWindowManager(
-            SignalBus signalBus
+            ISimpleWindowController windowController
         )
         {
-            _signalBus = signalBus;
+            _windowController = windowController;
         }
 
         public void Initialize()
         {
-            _signalBus.OpenWindow<SplashWindow>();
+            _windowController.Open<SplashWindow>();
         }
     }
 }

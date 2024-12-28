@@ -1,25 +1,26 @@
-﻿using Ui.Splash;
+﻿using Reflex;
+using Ui.Splash;
 using Ui.Splash.Windows;
-using Zenject;
+using UnityEngine;
 
 namespace Installers.Splash
 {
-    public class SplashInstaller : MonoInstaller
+    public class SplashInstaller : MonoBehaviour, IInstaller
     {
-        public override void InstallBindings()
+        public void InstallBindings(ContainerBuilder builder)
         {
-            BindManagers();
-            BindWindows();
+            BindManagers(builder);
+            BindWindows(builder);
         }
 
-        private void BindManagers()
+        private void BindManagers(ContainerBuilder builder)
         {
-            Container.BindInterfacesTo<SplashWindowManager>().AsSingle();
+            builder.AddSingleton<SplashWindowManager>();
         }
 
-        private void BindWindows()
+        private void BindWindows(ContainerBuilder builder)
         {
-            Container.BindInterfacesAndSelfTo<SplashWindow>().AsSingle();
+            builder.AddSingleton<SplashWindow>();
         }
     }
 }

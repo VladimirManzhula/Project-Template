@@ -1,23 +1,23 @@
-﻿using SimpleUi.Signals;
+﻿using Reflex.Interfaces;
 using Ui.Game.Windows;
-using Zenject;
+using Ui.Window;
 
 namespace Ui.Game
 {
-    public class GameWindowManager : IInitializable
+    public class GameWindowManager : IInitializable, INonLazy
     {
-        private readonly SignalBus _signalBus;
+        private readonly ISimpleWindowController _simpleWindowController;
 
         public GameWindowManager(
-            SignalBus signalBus
+            ISimpleWindowController simpleWindowController
         )
         {
-            _signalBus = signalBus;
+            _simpleWindowController = simpleWindowController;
         }
 
         public void Initialize()
         {
-            _signalBus.OpenWindow<MenuWindow>();
+            _simpleWindowController.Open<MenuWindow>();
         }
     }
 }
