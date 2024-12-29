@@ -6,18 +6,18 @@ namespace Ui.Splash
 {
     public class SplashWindowManager : IInitializable, INonLazy
     {
-        private readonly ISimpleWindowController _windowController;
+        private readonly ISimpleWindowController _simpleWindowController;
 
         public SplashWindowManager(
-            ISimpleWindowController windowController
+            ISimpleWindowController simpleWindowController
         )
         {
-            _windowController = windowController;
+            _simpleWindowController = simpleWindowController;
         }
 
         public void Initialize()
         {
-            _windowController.Open<SplashWindow>();
+            _simpleWindowController.Open<SplashWindow>();
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using Core.Services.Scenes.Impls;
+﻿using Core.Services.Scenes;
+using Core.Services.Scenes.Impls;
 using Reflex;
 using Ui.Project.Windows;
 using UnityEngine;
@@ -21,7 +22,7 @@ namespace Installers.Project
 
         private void BindServices(ContainerBuilder builder)
         {
-            builder.AddSingleton<SceneService>();
+            builder.AddSingleton<SceneService, ISceneService>();
         }
 
         private void BindWindows(ContainerBuilder builder)

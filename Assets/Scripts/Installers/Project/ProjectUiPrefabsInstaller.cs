@@ -19,14 +19,14 @@ namespace Installers.Project
 
         public override void InstallBindings(ContainerBuilder builder)
         {
-            //var canvasObject = Instantiate(canvas);
-            //if (canvasObject.TryGetComponent(out CustomGraphicRaycaster raycaster))
-            //    builder.AddSingleton(raycaster, typeof(IUiFilter));
-            //
-            //builder.AddSingleton<ISimpleWindowController>(container
-            //    => new SimpleWindowController(container, canvasObject.transform));
-            //
-            //builder.AddUi<LoadingController, LoadingView>(loadingView);
+            var canvasObject = Instantiate(canvas);
+            if (canvasObject.TryGetComponent(out CustomGraphicRaycaster raycaster))
+                builder.AddSingleton(raycaster, typeof(IUiFilter));
+            
+            builder.AddSingleton<ISimpleWindowController>(container
+                => new SimpleWindowController(container, canvasObject.transform));
+            
+            builder.AddUi<LoadingController, LoadingView>(loadingView);
         }
     }
 }
