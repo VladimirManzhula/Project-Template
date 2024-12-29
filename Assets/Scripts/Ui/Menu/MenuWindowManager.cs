@@ -2,13 +2,13 @@
 using Ui.Menu.Windows;
 using Ui.Window;
 
-namespace Ui.Game
+namespace Ui.Menu
 {
-    public class GameWindowManager : IInitializable, INonLazy
+    public class MenuWindowManager : IInitializable, INonLazy
     {
         private readonly ISimpleWindowController _simpleWindowController;
 
-        public GameWindowManager(
+        public MenuWindowManager(
             ISimpleWindowController simpleWindowController
         )
         {
@@ -17,7 +17,7 @@ namespace Ui.Game
 
         public void Initialize()
         {
-            
+            _simpleWindowController.Open<MenuWindow>();
         }
     }
 }

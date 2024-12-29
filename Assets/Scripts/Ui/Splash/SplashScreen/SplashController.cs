@@ -23,6 +23,6 @@ namespace Ui.Splash.SplashScreen
 
         public void Dispose() => _timerDisposable?.Dispose();
 
-        private void OnTimerFinished(long l) => _sceneService.LoadScene(ScenePlace.Game);
+        private void OnTimerFinished(long l) => _sceneService.LoadScene(ScenePlace.Menu);
     }
 }

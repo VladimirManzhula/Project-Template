@@ -1,7 +1,7 @@
-﻿using Ui.Game.Menu;
+﻿using Ui.Menu.Menu;
 using Ui.Window;
 
-namespace Ui.Game.Windows
+namespace Ui.Menu.Windows
 {
     public class MenuWindow : AWindow
     {

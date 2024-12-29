@@ -3,6 +3,7 @@
     public readonly struct ScenePlace
     {
         public static readonly ScenePlace Splash = new ScenePlace("Splash");
+        public static readonly ScenePlace Menu = new ScenePlace("Menu");
         public static readonly ScenePlace Game = new ScenePlace("Game");
 
         public readonly string Value;
