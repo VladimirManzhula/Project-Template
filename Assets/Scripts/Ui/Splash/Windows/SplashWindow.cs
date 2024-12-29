@@ -1,13 +1,12 @@
-﻿using Core.Constants;
-using SimpleUi;
-using Ui.Splash.SplashScreen;
+﻿using Ui.Splash.SplashScreen;
+using Ui.Window;
 
 namespace Ui.Splash.Windows
 {
-    public class SplashWindow : WindowBase
+    public class SplashWindow : AWindow
     {
-        public override string Name => nameof(WindowNames.EProjectType.Splash);
-        
+        public override string Name => nameof(SplashWindow);
+
         protected override void AddControllers()
         {
             AddController<SplashController>();

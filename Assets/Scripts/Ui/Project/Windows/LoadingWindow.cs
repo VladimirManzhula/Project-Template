@@ -1,12 +1,11 @@
-﻿using Core.Constants;
-using SimpleUi;
-using Ui.Project.Loading;
+﻿using Ui.Project.Loading;
+using Ui.Window;
 
 namespace Ui.Project.Windows
 {
-    public class LoadingWindow : WindowBase
+    public class LoadingWindow : AWindow
     {
-        public override string Name => nameof(WindowNames.EProjectType.Loading);
+        public override string Name => nameof(LoadingWindow);
 
         protected override void AddControllers()
         {

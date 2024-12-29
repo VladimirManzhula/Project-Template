@@ -1,12 +1,15 @@
-﻿using SimpleUi;
+﻿using Reflex;
+using ReflexUI.Runtime;
+using ReflexUI.Runtime.Extensions;
+using ReflexUI.Runtime.Interfaces;
 using Ui.Game.Menu;
+using Ui.Window;
 using UnityEngine;
-using Zenject;
 
 namespace Installers.Game
 {
     [CreateAssetMenu(
-        menuName = "Installers/Game/GameUiPrefabsInstaller", 
+        menuName = "Installers/Game/" + nameof(GameUiPrefabsInstaller),
         fileName = nameof(GameUiPrefabsInstaller), order = 0
     )]
     public class GameUiPrefabsInstaller : ScriptableObjectInstaller
@@ -14,12 +17,16 @@ namespace Installers.Game
         [SerializeField] private Canvas canvas;
         [SerializeField] private MenuView menuView;
 
-        public override void InstallBindings()
+        public override void InstallBindings(ContainerBuilder builder)
         {
-            var canvasInstance = Container.InstantiatePrefabForComponent<Canvas>(canvas);
-            var canvasTransform = canvasInstance.transform;
+            var canvasObject = Instantiate(canvas);
+            if (canvasObject.TryGetComponent(out CustomGraphicRaycaster raycaster))
+                builder.AddSingleton(raycaster, typeof(IUiFilter));
             
-            Container.BindUiView<MenuController, MenuView>(menuView, canvasTransform);
+            builder.AddSingleton<ISimpleWindowController>(container
+                => new SimpleWindowController(container, canvasObject.transform));
+            
+            builder.AddUi<MenuController, MenuView>(menuView);
         }
     }
 }

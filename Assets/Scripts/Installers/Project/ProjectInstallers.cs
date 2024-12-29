@@ -1,33 +1,33 @@
-﻿using Core.Services.Scenes.Impls;
+﻿using Core.Services.Scenes;
+using Core.Services.Scenes.Impls;
+using Reflex;
 using Ui.Project.Windows;
 using UnityEngine;
-using Zenject;
 
 namespace Installers.Project
 {
-    public class ProjectInstallers : MonoInstaller
+    public class ProjectInstallers : MonoBehaviour, IInstaller
     {
-        public override void InstallBindings()
+        public void InstallBindings(ContainerBuilder builder)
         {
             SetSettings();
-            BindServices();
-            BindWindows();
+            BindServices(builder);
+            BindWindows(builder);
         }
 
         private void SetSettings()
         {
             Application.targetFrameRate = 60;
-            SignalBusInstaller.Install(Container); 
         }
 
-        private void BindServices()
+        private void BindServices(ContainerBuilder builder)
         {
-            Container.BindInterfacesTo<SceneService>().AsSingle();
+            builder.AddSingleton<SceneService, ISceneService>();
         }
 
-        private void BindWindows()
+        private void BindWindows(ContainerBuilder builder)
         {
-            Container.BindInterfacesAndSelfTo<LoadingWindow>().AsSingle();
+            builder.AddSingleton<LoadingWindow>();
         }
     }
 }

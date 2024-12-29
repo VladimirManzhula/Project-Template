@@ -1,8 +1,8 @@
 ﻿using System;
 using Core.Services.Scenes;
-using SimpleUi.Abstracts;
+using Reflex.Interfaces;
+using ReflexUI.Runtime.Abstracts;
 using UniRx;
-using Zenject;
 
 namespace Ui.Splash.SplashScreen
 {
@@ -18,7 +18,8 @@ namespace Ui.Splash.SplashScreen
             _sceneService = sceneService;
         }
 
-        public void Initialize() => _timerDisposable = Observable.Timer(TimeSpan.FromSeconds(2)).Subscribe(OnTimerFinished);
+        public void Initialize() =>
+            _timerDisposable = Observable.Timer(TimeSpan.FromSeconds(2)).Subscribe(OnTimerFinished);
 
         public void Dispose() => _timerDisposable?.Dispose();
 

@@ -1,25 +1,26 @@
-﻿using Ui.Game;
+﻿using Reflex;
+using Ui.Game;
 using Ui.Game.Windows;
-using Zenject;
+using UnityEngine;
 
 namespace Installers.Game
 {
-    public class GameInstaller : MonoInstaller
+    public class GameInstaller : MonoBehaviour, IInstaller
     {
-        public override void InstallBindings()
+        public void InstallBindings(ContainerBuilder builder)
         {
-            BindManagers();
-            BindWindows();
+            BindManagers(builder);
+            BindWindows(builder);
         }
 
-        private void BindManagers()
-        { 
-            Container.BindInterfacesTo<GameWindowManager>().AsSingle();
+        private void BindManagers(ContainerBuilder builder)
+        {
+            builder.AddSingleton<GameWindowManager>();
         }
 
-        private void BindWindows()
+        private void BindWindows(ContainerBuilder builder)
         {
-            Container.BindInterfacesAndSelfTo<MenuWindow>().AsSingle();
+            builder.AddSingleton<MenuWindow>();
         }
     }
 }
