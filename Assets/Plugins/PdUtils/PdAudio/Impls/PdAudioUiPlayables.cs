@@ -6,7 +6,7 @@ using UniRx;
 using UniRx.Triggers;
 using UnityEngine.UI;
 
-namespace PdUtils.PdAudio
+namespace PdUtils.PdAudio.Impls
 {
 	public class PdAudioUiPlayables : IConfigurable
 	{

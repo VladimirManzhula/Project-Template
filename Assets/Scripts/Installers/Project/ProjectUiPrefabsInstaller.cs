@@ -20,6 +20,8 @@ namespace Installers.Project
         public override void InstallBindings(ContainerBuilder builder)
         {
             var canvasObject = Instantiate(canvas);
+            DontDestroyOnLoad(canvasObject);
+            
             if (canvasObject.TryGetComponent(out CustomGraphicRaycaster raycaster))
                 builder.AddSingleton(raycaster, typeof(IUiFilter));
             

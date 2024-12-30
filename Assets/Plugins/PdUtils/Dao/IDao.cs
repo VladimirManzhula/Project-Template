@@ -1,9 +1,11 @@
-namespace PdUtils.Dao
+﻿namespace PdUtils.Dao
 {
-    public interface IDao<T> 
+    public interface IDao<T>
     {
-        void Save(T entity);
+        bool Exist();
+        
+        void Save(T obj);
+        
         T Load();
-        void Remove();
     }
 }

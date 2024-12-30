@@ -82,7 +82,6 @@ namespace PdUtils.PlayerPrefs.Impl
             UnityEngine.PlayerPrefs.DeleteKey(key);
         }
 
-
         public void DeleteAll()
         {
             UnityEngine.PlayerPrefs.DeleteAll();

@@ -1,8 +1,7 @@
 using UnityEngine;
 
-namespace PdUtils.PdAudio
+namespace PdUtils.PdAudio.Impls
 {
-
     public interface IPdAudioSources
     {
         AudioSource MusicAudioSource { get; }

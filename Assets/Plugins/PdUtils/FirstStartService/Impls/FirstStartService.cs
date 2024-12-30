@@ -1,21 +1,20 @@
 using System;
-using System.Globalization;
 using PdUtils.DateTimeService;
 using PdUtils.PlayerPrefs;
 
-namespace PdUtils.FirstStartService.Impl
+namespace PdUtils.FirstStartService.Impls
 {
-	public class FirstStartStringService : IFirstStartService
+	public class FirstStartService : IFirstStartService
 	{
-		private const string FirstStartKey = "Game.FirstStart";
-		private const string FirstStartTimeKey = "Game.FirstStartTime";
+		private const string FirstStartKey = "Game.FirstStartTs";
+		private const string FirstStartTimeKey = "Game.FirstStartTimeTs";
 
 		private readonly IPlayerPrefsManager _prefsManager;
 		private readonly IDateTimeService _dateTimeService;
 
 		private DateTime? _firstTimeUtc;
 
-		public FirstStartStringService(IPlayerPrefsManager prefsManager, IDateTimeService dateTimeService)
+		public FirstStartService(IPlayerPrefsManager prefsManager, IDateTimeService dateTimeService)
 		{
 			_prefsManager = prefsManager;
 			_dateTimeService = dateTimeService;
@@ -28,8 +27,8 @@ namespace PdUtils.FirstStartService.Impl
 				_prefsManager.SetValue(FirstStartKey, true);
 				firstStartAction?.Invoke();
 
-				var startTimeStr = _dateTimeService.UtcNow.DateTime.ToString("G");
-				_prefsManager.SetValue(FirstStartTimeKey, startTimeStr);
+				var startTimeMs = _dateTimeService.UtcNow.ToUnixTimeMilliseconds();
+				_prefsManager.SetValue(FirstStartTimeKey, startTimeMs);
 			}
 			else
 			{
@@ -46,8 +45,8 @@ namespace PdUtils.FirstStartService.Impl
 			if (_firstTimeUtc.HasValue)
 				return _firstTimeUtc.Value;
 			
-			var startTimeStr = _prefsManager.GetValue<string>(FirstStartTimeKey);
-			_firstTimeUtc = DateTime.Parse(startTimeStr, CultureInfo.InvariantCulture, DateTimeStyles.AdjustToUniversal);
+			var startTimeMs = _prefsManager.GetValue<long>(FirstStartTimeKey);
+			_firstTimeUtc = DateTimeOffset.FromUnixTimeMilliseconds(startTimeMs).DateTime;
 			return _firstTimeUtc;
 		}
 	}

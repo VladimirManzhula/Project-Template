@@ -5,7 +5,7 @@ using PdUtils.RandomProvider;
 using UniRx;
 using UnityEngine;
 
-namespace PdUtils.PdAudio
+namespace PdUtils.PdAudio.Impls
 {
 	public class PdAudio : IPdAudio, IPdAudioSettings, IConfigurable, IDisposable
 	{

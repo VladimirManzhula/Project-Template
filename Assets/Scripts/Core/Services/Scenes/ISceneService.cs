@@ -3,5 +3,6 @@
     public interface ISceneService
     {
         void LoadScene(ScenePlace scenePlace);
+        void Loading();
     }
 }
