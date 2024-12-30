@@ -25,8 +25,8 @@ namespace Installers.Project
             if (canvasObject.TryGetComponent(out CustomGraphicRaycaster raycaster))
                 builder.AddSingleton(raycaster, typeof(IUiFilter));
             
-            builder.AddSingleton<ISimpleWindowController>(container
-                => new SimpleWindowController(container, canvasObject.transform));
+            builder.AddSingleton<IProjectWindowController>(container
+                => new ProjectWindowController(container, canvasObject.transform));
             
             builder.AddUi<LoadingController, LoadingView>(loadingView);
         }

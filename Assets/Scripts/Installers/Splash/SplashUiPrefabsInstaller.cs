@@ -23,8 +23,8 @@ namespace Installers.Splash
             if (canvasObject.TryGetComponent(out CustomGraphicRaycaster raycaster))
                 builder.AddSingleton(raycaster, typeof(IUiFilter));
             
-            builder.AddSingleton<ISimpleWindowController>(container
-                => new SimpleWindowController(container, canvasObject.transform));
+            builder.AddSingleton<IMenuWindowController>(container
+                => new MenuWindowController(container, canvasObject.transform));
             
             builder.AddUi<SplashController, SplashView>(splashView);
         }

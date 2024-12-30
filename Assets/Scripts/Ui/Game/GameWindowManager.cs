@@ -6,13 +6,13 @@ namespace Ui.Game
 {
     public class GameWindowManager : IInitializable, INonLazy
     {
-        private readonly ISimpleWindowController _simpleWindowController;
+        private readonly IMenuWindowController _menuWindowController;
 
         public GameWindowManager(
-            ISimpleWindowController simpleWindowController
+            IMenuWindowController menuWindowController
         )
         {
-            _simpleWindowController = simpleWindowController;
+            _menuWindowController = menuWindowController;
         }
 
         public void Initialize()

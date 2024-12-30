@@ -6,18 +6,18 @@ namespace Core.Services.Scenes.Impls
 {
     public class SceneService : ISceneService
     {
-        private readonly ISimpleWindowController _simpleWindowController;
+        private readonly IProjectWindowController _projectWindowController;
 
-        public SceneService(ISimpleWindowController simpleWindowController)
+        public SceneService(IProjectWindowController projectWindowController)
         {
-            _simpleWindowController = simpleWindowController;
+            _projectWindowController = projectWindowController;
         }
 
         public void LoadScene(ScenePlace scenePlace) => SceneManager.LoadScene(scenePlace.Value);
         
         public void Loading()
         {
-            _simpleWindowController.Open<LoadingWindow>();
+            _projectWindowController.Open<LoadingWindow>();
         }
     }
 }

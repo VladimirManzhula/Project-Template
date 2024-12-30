@@ -3,7 +3,7 @@ using Ui.Window;
 
 namespace Ui.Splash.Windows
 {
-    public class SplashWindow : AWindow
+    public class SplashWindow : AMenuWindow
     {
         public override string Name => nameof(SplashWindow);
 

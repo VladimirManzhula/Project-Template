@@ -3,7 +3,7 @@ using Ui.Window;
 
 namespace Ui.Project.Windows
 {
-    public class LoadingWindow : AWindow
+    public class LoadingWindow : AProjectWindow
     {
         public override string Name => nameof(LoadingWindow);
 

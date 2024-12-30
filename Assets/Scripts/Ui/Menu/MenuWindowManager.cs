@@ -1,24 +1,23 @@
 ﻿using Reflex.Interfaces;
 using Ui.Menu.Windows;
-using Ui.Project.Windows;
 using Ui.Window;
 
 namespace Ui.Menu
 {
     public class MenuWindowManager : IInitializable, INonLazy
     {
-        private readonly ISimpleWindowController _simpleWindowController;
+        private readonly IMenuWindowController _menuWindowController;
 
         public MenuWindowManager(
-            ISimpleWindowController simpleWindowController
+            IMenuWindowController menuWindowController
         )
         {
-            _simpleWindowController = simpleWindowController;
+            _menuWindowController = menuWindowController;
         }
 
         public void Initialize()
         {
-            _simpleWindowController.Open<MenuWindow>();
+            _menuWindowController.Open<MenuWindow>();
         }
     }
 }
