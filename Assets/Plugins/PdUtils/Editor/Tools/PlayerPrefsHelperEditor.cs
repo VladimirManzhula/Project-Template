@@ -2,7 +2,7 @@
 using UnityEditor;
 using UnityEngine;
 
-namespace Editor.Helpers
+namespace PdUtils.Editor.Tools
 {
     public class PlayerPrefsHelperEditor
     {
@@ -12,7 +12,7 @@ namespace Editor.Helpers
         [MenuItem("Tools/SavedGameData/Delete PlayerPrefs")]
         public static void PlayerPrefsDeleteAll()
         {
-            PlayerPrefs.DeleteAll();
+            UnityEngine.PlayerPrefs.DeleteAll();
             UnityEngine.Debug.Log($"[{nameof(PlayerPrefsHelperEditor)}] [✖_✖] Delete all PlayerPrefs");
         }
 
