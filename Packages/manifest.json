@@ -1,7 +1,6 @@
 {
   "dependencies": {
-    "com.playdarium.unity.reflex": "https://gitlab.com/pd-packages/reflex.git#upm",
-    "com.playdarium.unity.reflex-ui": "https://gitlab.com/pd-packages/reflex-ui.git#upm",
+    "com.elestrago.unity.reflex-ui": "1.1.5",
     "com.neuecc.unirx": "https://github.com/neuecc/UniRx.git?path=Assets/Plugins/UniRx/Scripts",
     "com.unity.2d.sprite": "1.0.0",
     "com.unity.ai.navigation": "2.0.5",
@@ -44,5 +43,14 @@
     "com.unity.modules.vr": "1.0.0",
     "com.unity.modules.wind": "1.0.0",
     "com.unity.modules.xr": "1.0.0"
-  }
+  },
+  "scopedRegistries": [
+    {
+      "name": "eLeSTRaGo",
+      "url": "https://registry.npmjs.org",
+      "scopes": [
+        "com.elestrago.unity"
+      ]
+    }
+  ]
 }
