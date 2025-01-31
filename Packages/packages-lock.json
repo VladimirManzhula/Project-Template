@@ -1,27 +1,27 @@
 {
   "dependencies": {
+    "com.elestrago.unity.reflex": {
+      "version": "1.2.2",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {},
+      "url": "https://registry.npmjs.org"
+    },
+    "com.elestrago.unity.reflex-ui": {
+      "version": "1.1.5",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {
+        "com.elestrago.unity.reflex": "1.2.2"
+      },
+      "url": "https://registry.npmjs.org"
+    },
     "com.neuecc.unirx": {
       "version": "https://github.com/neuecc/UniRx.git?path=Assets/Plugins/UniRx/Scripts",
       "depth": 0,
       "source": "git",
       "dependencies": {},
       "hash": "6baeccf6c544c155497164327cca72f28163a578"
-    },
-    "com.playdarium.unity.reflex": {
-      "version": "https://gitlab.com/pd-packages/reflex.git#upm",
-      "depth": 0,
-      "source": "git",
-      "dependencies": {},
-      "hash": "1ca98dc3633ce8a01f816f51331dc221b02ef334"
-    },
-    "com.playdarium.unity.reflex-ui": {
-      "version": "https://gitlab.com/pd-packages/reflex-ui.git#upm",
-      "depth": 0,
-      "source": "git",
-      "dependencies": {
-        "com.playdarium.unity.reflex": "1.1.4"
-      },
-      "hash": "c10b49649b6fec7b4f8b4c5f19f1c16621b41ffd"
     },
     "com.unity.2d.sprite": {
       "version": "1.0.0",

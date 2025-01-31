@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "com.elestrago.unity.reflex": "1.2.2",
     "com.elestrago.unity.reflex-ui": "1.1.5",
     "com.neuecc.unirx": "https://github.com/neuecc/UniRx.git?path=Assets/Plugins/UniRx/Scripts",
     "com.unity.2d.sprite": "1.0.0",
